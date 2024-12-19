@@ -3,15 +3,12 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
-
-import aceite from '../../assets/level6/aceite.png'
-import huevo from '../../assets/level6/huevofrito.png'
-import nueces from '../../assets/level6/nueces.png';
-import papas from '../../assets/level3/papasfritas.png'
-import semilas from '../../assets/level3/aceiteoliva.png';
-
-
-
+import correr from '../../assets/level7/correr.png'
+import gym from '../../assets/level7/hacergimnasia.png'
+import footbal from '../../assets/level7/jugaralapelota.png'
+import leer from '../../assets/level7/leer.png'
+import tele from '../../assets/level7/mirartele.png'
+import tablet from '../../assets/level7/tabletpantallas.png'
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -20,32 +17,37 @@ const items = [
     id: 1, 
     name: 'Banana', 
     type: 'fruit', 
-    image: aceite
+    image: correr 
   },
   { 
     id: 2, 
     name: 'Apple', 
     type: 'fruit', 
-    image: semilas 
+    image: gym 
   },
   { 
     id: 3, 
     name: 'Carrot', 
     type: 'vegetable', 
-    image: papas 
+    image: leer 
   },
   { 
     id: 4, 
     name: 'Broccoli', 
     type: 'vegetable', 
-    image: huevo 
+    image: tele
   },
-  
+  { 
+    id: 5, 
+    name: 'Tomato', 
+    type: 'vegetable', 
+    image: tablet 
+  },
   { 
     id: 6, 
     name: 'Strawberry', 
     type: 'fruit', 
-    image: nueces
+    image: footbal
   },
 ];
 
@@ -99,7 +101,7 @@ function DropZone({ type, items, onDrop }) {
         backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
       }}
     >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Grasas beneficiosas' : 'Grasas perjudiciales​'}</h2>
+      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Mayor gasto alto de energia' : 'Menor gasto de energia​'}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -118,7 +120,7 @@ function DropZone({ type, items, onDrop }) {
   );
 }
 
-function Game3({ onBackToLevels }) {
+function Game6({ onBackToLevels }) {
   const [fruits, setFruits] = useState([]);
   const [vegetables, setVegetables] = useState([]);
   const [unsorted, setUnsorted] = useState(items);
@@ -148,10 +150,10 @@ function Game3({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
+        <h1 style={styles.title}>Arrastra las actividades al gasto de energía correspondiente. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable.​</h1>
         
         <div style={styles.introText}>
-        “Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud.” 
+        “Para proteger nuestra salud es importante jugar activamente, moverse o hacer algún deporte al menos 60 minutos todos los días. Evitemos quedarnos quietos más de una hora y no pasemos más de dos horas frente a las pantallas.” 
         </div>
 
         <div style={styles.scoreBoard}>
@@ -162,8 +164,9 @@ function Game3({ onBackToLevels }) {
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
-            Anotá los alimentos que comés a lo largo del día y diferenciá los que aportan grasas beneficiosas y grasas poco beneficiosas para la salud. 
- ​
+            ¡Hacé una pausa activa! Trotá en el lugar contando hasta 20. Agachate y luego estírate saltando 10 veces. ​
+
+Recordá tomar agua antes, durante y después de hacer actividad física. Sumá 8 vasos al día. ​
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink
@@ -208,37 +211,13 @@ function Game3({ onBackToLevels }) {
 
 const styles = {
   container: {
-    maxWidth: '100%',
+    maxWidth: '800px',
     margin: '0 auto',
     padding: '20px',
-    background: `linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)), url(TU_IMAGEN.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundColor: '#f0f8ff',
     borderRadius: '15px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     fontFamily: 'Arial, sans-serif',
-    overflowX: 'hidden',
-  },
-  backgroundOverlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundImage: 'url(TU_IMAGEN.jpg)', // Reemplaza con la ruta de tu imagen
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    opacity: 0.3, // Ajusta la transparencia (0 = transparente, 1 = opaco)
-    zIndex: -1, // Asegura que esté detrás del contenido
-  },
-
-  // El contenido necesita un fondo semitransparente para mejor legibilidad
-  contentWrapper: {
-    position: 'relative',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Fondo blanco semitransparente
-    padding: '20px',
-    borderRadius: '15px',
   },
   title: {
     textAlign: 'center',
@@ -280,10 +259,10 @@ const styles = {
     minHeight: '300px',
   },
   fruitBox: {
-    backgroundColor: '#F46036',
+    backgroundColor: '#ff7f50',
   },
   vegetableBox: {
-    backgroundColor: '#D7263D',
+    backgroundColor: '#32cd32',
   },
   boxTitle: {
     color: 'white',
@@ -309,7 +288,8 @@ const styles = {
     height: '100px',
     objectFit: 'cover',
     borderRadius: '8px',
-    },
+
+  },
   itemLabel: {
     position: 'absolute',
     top: '0',
@@ -360,4 +340,4 @@ const styles = {
   },
 };
 
-export default Game3;
+export default Game6;

@@ -3,51 +3,26 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
-
-import aceite from '../../assets/level6/aceite.png'
-import huevo from '../../assets/level6/huevofrito.png'
-import nueces from '../../assets/level6/nueces.png';
-import papas from '../../assets/level3/papasfritas.png'
-import semilas from '../../assets/level3/aceiteoliva.png';
-
-
-
+import Lenteja from '../../assets/level4/lentejas.png'
+import Mung from '../../assets/level4/porotosmung.png'
+import Quinoa from '../../assets/level4/quinoa.png'
+import Garbanzo from '../../assets/level4/garbanzo.png'
+import Integral from '../../assets/level4/arrozintegral.png'
+import serraceno from '../../assets/level4/Trigosarraceno.png'
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const items = [
-  { 
-    id: 1, 
-    name: 'Banana', 
-    type: 'fruit', 
-    image: aceite
-  },
-  { 
-    id: 2, 
-    name: 'Apple', 
-    type: 'fruit', 
-    image: semilas 
-  },
-  { 
-    id: 3, 
-    name: 'Carrot', 
-    type: 'vegetable', 
-    image: papas 
-  },
-  { 
-    id: 4, 
-    name: 'Broccoli', 
-    type: 'vegetable', 
-    image: huevo 
-  },
+  { id: 1, name: 'Banana', type: 'Lentejas', image: Lenteja},
+  { id: 3, name: 'Carrot', type: 'Arroz_Integral', image: Integral },
+  { id: 4, name: 'Broccoli', type: 'Quinoa', image: Quinoa},
+  { id: 5, name: 'Olive Oil', type: 'Porotos_Mung', image: Mung },
+  { id: 6, name: 'Avocado', type: 'Garbanzos', image: Garbanzo},
+  { id: 7, name: 'Bread', type: 'Serraceno', image: serraceno },
   
-  { 
-    id: 6, 
-    name: 'Strawberry', 
-    type: 'fruit', 
-    image: nueces
-  },
 ];
+
+const categories = ['Lentejas', 'Arroz_Integral', 'Porotos_Mung', 'Quinoa', 'Serraceno', 'Garbanzos'];
 
 function DraggableItem({ item, onDrop }) {
   const [{ isDragging }, drag] = useDrag({
@@ -88,18 +63,14 @@ function DropZone({ type, items, onDrop }) {
     }),
   });
 
-  const boxStyle = type === 'fruit' ? styles.fruitBox : styles.vegetableBox;
+  const boxStyle = {
+    ...styles.dropBox,
+    backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : styles.categoryColors[type],
+  };
 
   return (
-    <div 
-      ref={drop}
-      style={{
-        ...styles.dropBox,
-        ...boxStyle,
-        backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
-      }}
-    >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Grasas beneficiosas' : 'Grasas perjudiciales​'}</h2>
+    <div ref={drop} style={boxStyle}>
+      <h2 style={styles.boxTitle}>{type.charAt(0).toUpperCase() + type.slice(1)}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -118,9 +89,10 @@ function DropZone({ type, items, onDrop }) {
   );
 }
 
-function Game3({ onBackToLevels }) {
-  const [fruits, setFruits] = useState([]);
-  const [vegetables, setVegetables] = useState([]);
+function Game7({ onBackToLevels }) {
+  const [categorizedItems, setCategorizedItems] = useState(
+    Object.fromEntries(categories.map(category => [category, []]))
+  );
   const [unsorted, setUnsorted] = useState(items);
   const [score, setScore] = useState(0);
   const [gameCompleted, setGameCompleted] = useState(false);
@@ -133,11 +105,10 @@ function Game3({ onBackToLevels }) {
 
   const handleDrop = (item, boxType) => {
     if (item.type === boxType) {
-      if (boxType === 'fruit') {
-        setFruits(prevFruits => [...prevFruits, item]);
-      } else {
-        setVegetables(prevVegetables => [...prevVegetables, item]);
-      }
+      setCategorizedItems(prev => ({
+        ...prev,
+        [boxType]: [...prev[boxType], item]
+      }));
       setUnsorted(prevUnsorted => prevUnsorted.filter(i => i.id !== item.id));
       setScore(prevScore => prevScore + 10);
     } else {
@@ -148,10 +119,11 @@ function Game3({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
+        <h1 style={styles.title}>Arrastrá cada legumbre o cereal a su nombre correcto. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable</h1>
         
         <div style={styles.introText}>
-        “Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud.” 
+        “Comamos legumbres y cereales integrales que nos dan más fibra. Podemos combinar legumbres y cereales, que nos dan proteína de alto valor biológico, como una alternativa para reemplazar la carne.” 
+
         </div>
 
         <div style={styles.scoreBoard}>
@@ -162,8 +134,9 @@ function Game3({ onBackToLevels }) {
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
-            Anotá los alimentos que comés a lo largo del día y diferenciá los que aportan grasas beneficiosas y grasas poco beneficiosas para la salud. 
- ​
+            Buscá la receta de una preparación con legumbres como porotos, lentejas, garbanzos. ¿Te animás a prepararla? 
+Animate a probar nuevas legumbres en familia. Dejalas en remojo unas horas antes de cocinarlas.  
+
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink
@@ -177,17 +150,14 @@ function Game3({ onBackToLevels }) {
         )}
         
         <div style={styles.boxesContainer}>
-          <DropZone 
-            type="fruit" 
-            items={fruits} 
-            onDrop={handleDrop} 
-          />
-          
-          <DropZone 
-            type="vegetable" 
-            items={vegetables} 
-            onDrop={handleDrop} 
-          />
+          {categories.map(category => (
+            <DropZone 
+              key={category}
+              type={category} 
+              items={categorizedItems[category]} 
+              onDrop={handleDrop} 
+            />
+          ))}
         </div>
         
         <div style={styles.unsortedSection}>
@@ -211,39 +181,16 @@ const styles = {
     maxWidth: '100%',
     margin: '0 auto',
     padding: '20px',
-    background: `linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)), url(TU_IMAGEN.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundColor: '#f0f8ff',
     borderRadius: '15px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     fontFamily: 'Arial, sans-serif',
     overflowX: 'hidden',
   },
-  backgroundOverlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundImage: 'url(TU_IMAGEN.jpg)', // Reemplaza con la ruta de tu imagen
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    opacity: 0.3, // Ajusta la transparencia (0 = transparente, 1 = opaco)
-    zIndex: -1, // Asegura que esté detrás del contenido
-  },
-
-  // El contenido necesita un fondo semitransparente para mejor legibilidad
-  contentWrapper: {
-    position: 'relative',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Fondo blanco semitransparente
-    padding: '20px',
-    borderRadius: '15px',
-  },
   title: {
     textAlign: 'center',
     color: '#2c3e50',
-    fontSize: '1.2em',
+    fontSize: '1.5em',
     marginBottom: '20px',
   },
   introText: {
@@ -268,28 +215,41 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   boxesContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
     gap: '20px',
     marginBottom: '30px',
   },
+  '@media (max-width: 768px)': {
+    boxesContainer: {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+  },
+  '@media (max-width: 480px)': {
+    boxesContainer: {
+      gridTemplateColumns: '1fr',
+    },
+  },
   dropBox: {
-    flex: 1,
     padding: '15px',
     borderRadius: '10px',
-    minHeight: '300px',
+    minHeight: '200px',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
-  fruitBox: {
-    backgroundColor: '#F46036',
-  },
-  vegetableBox: {
-    backgroundColor: '#D7263D',
+  categoryColors: {
+    Lentejas: '#ff7f50',
+    Arroz_Integral: '#32cd32',
+    Serraceno: '#ffd700',
+    Quinoa: '#deb887',
+    Porotos_Mung: '#87cefa',
+    Garbanzos: '#fa8072',
   },
   boxTitle: {
     color: 'white',
     textAlign: 'center',
-    fontSize: '1.5em',
+    fontSize: '1.3em',
     marginBottom: '15px',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
   },
   itemsGrid: {
     display: 'grid',
@@ -303,13 +263,17 @@ const styles = {
     position: 'relative',
     cursor: 'move',
     transition: 'transform 0.2s',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
   },
   image: {
     width: '100%',
     height: '100px',
     objectFit: 'cover',
     borderRadius: '8px',
-    },
+  
+  },
   itemLabel: {
     position: 'absolute',
     top: '0',
@@ -324,9 +288,13 @@ const styles = {
     opacity: '0',
     transition: 'opacity 0.2s',
     borderRadius: '8px',
+    '&:hover': {
+      opacity: '1',
+    },
   },
   unsortedSection: {
     marginTop: '20px',
+    overflowX: 'auto',
   },
   congratsMessage: {
     backgroundColor: '#4CAF50',
@@ -356,8 +324,13 @@ const styles = {
     fontSize: '1.1em',
     cursor: 'pointer',
     transition: 'background-color 0.3s',
-    marginTop: '10px',
+    textDecoration: 'none',
+    display: 'inline-block',
+    '&:hover': {
+      backgroundColor: '#0d8bf2',
+    },
   },
 };
 
-export default Game3;
+export default Game7;
+

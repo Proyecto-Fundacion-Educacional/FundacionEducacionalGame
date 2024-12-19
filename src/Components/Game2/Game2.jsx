@@ -216,8 +216,8 @@ function Game2({ onBackToLevels }) {
     <div style={styles.container}>
       <h1 style={styles.title}>Ordena la Comida saludable y No saludable</h1>
       <div style={styles.introText}>
-        ¡Bienvenido al juego de clasificación! Arrastra cada alimento a su caja correspondiente: 
-        frutas a la caja naranja y verduras a la caja verde. Ganarás 10 puntos por cada acierto 
+        ¡Bienvenido al juego de clasificación! Arrastra cada alimento a su caja correspondiente 
+        Ganarás 10 puntos por cada acierto 
         y perderás 5 puntos por cada error. ¡Demuestra tus conocimientos sobre alimentos!
       </div>
       <div style={styles.scoreBoard}>
@@ -228,8 +228,8 @@ function Game2({ onBackToLevels }) {
         <div style={styles.congratsMessage}>
           <div style={styles.congratsTitle}>¡Felicitaciones!</div>
           <div style={styles.congratsText}>
-            Has completado el juego con una puntuación de {score} puntos.
-            {score === items.length * 10 && " ¡Puntuación perfecta!"}
+            A veces esta bien comer comidas no saludables, pero lo importante es priorizar comidas que nos hagan bien al cuerpo
+            
           </div>
           <NavLink
             style={styles.backButton}

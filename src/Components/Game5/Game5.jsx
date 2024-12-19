@@ -4,48 +4,52 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
 
-import aceite from '../../assets/level6/aceite.png'
-import huevo from '../../assets/level6/huevofrito.png'
-import nueces from '../../assets/level6/nueces.png';
-import papas from '../../assets/level3/papasfritas.png'
-import semilas from '../../assets/level3/aceiteoliva.png';
-
-
-
+// Import local images
+import yogurImage from '../../assets/level5/yogur.png';
+import lecheImage from '../../assets/level5/Leche.png';
+import quesoImage from '../../assets/level5/queso.png';
+import heladoImage from '../../assets/level5/helado.png';
+import mantecaImage from '../../assets/level5/manteca.png';
+import cremaImage from '../../assets/level5/dulcedeleche.png';
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const items = [
   { 
     id: 1, 
-    name: 'Banana', 
+    name: 'Yogur', 
     type: 'fruit', 
-    image: aceite
+    image: yogurImage
   },
   { 
     id: 2, 
-    name: 'Apple', 
+    name: 'Leche', 
     type: 'fruit', 
-    image: semilas 
+    image: lecheImage
   },
   { 
     id: 3, 
-    name: 'Carrot', 
-    type: 'vegetable', 
-    image: papas 
+    name: 'Queso', 
+    type: 'fruit', 
+    image: quesoImage
   },
   { 
     id: 4, 
-    name: 'Broccoli', 
+    name: 'Helado', 
     type: 'vegetable', 
-    image: huevo 
+    image: heladoImage
   },
-  
+  { 
+    id: 5, 
+    name: 'Manteca', 
+    type: 'vegetable', 
+    image: mantecaImage
+  },
   { 
     id: 6, 
-    name: 'Strawberry', 
-    type: 'fruit', 
-    image: nueces
+    name: 'Crema', 
+    type: 'vegetable', 
+    image: cremaImage
   },
 ];
 
@@ -99,7 +103,7 @@ function DropZone({ type, items, onDrop }) {
         backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
       }}
     >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Grasas beneficiosas' : 'Grasas perjudiciales​'}</h2>
+      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'LACTEOS CON MUCHO CALCIO' : 'LÁCTEOS CON POCO CALCIO Y MUCHA AZÚCAR/GRASA​'}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -118,7 +122,7 @@ function DropZone({ type, items, onDrop }) {
   );
 }
 
-function Game3({ onBackToLevels }) {
+function Game5({ onBackToLevels }) {
   const [fruits, setFruits] = useState([]);
   const [vegetables, setVegetables] = useState([]);
   const [unsorted, setUnsorted] = useState(items);
@@ -148,10 +152,10 @@ function Game3({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
+        <h1 style={styles.title}>Arrastrá cada lácteo según su recomendación de consumo. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable.​</h1>
         
         <div style={styles.introText}>
-        “Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud.” 
+        "Consumamos diariamente leche, yogur o queso, preferentemente descremados. Estos alimentos son las principales fuentes de calcio." ​
         </div>
 
         <div style={styles.scoreBoard}>
@@ -162,8 +166,9 @@ function Game3({ onBackToLevels }) {
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
-            Anotá los alimentos que comés a lo largo del día y diferenciá los que aportan grasas beneficiosas y grasas poco beneficiosas para la salud. 
- ​
+            Elegí una fruta que quedaría bien para hacer un licuado con leche.  ​
+
+Buscá la información nutricional de la leche, un yogur o el queso y encontrá cuánto calcio aporta una porción.  ​
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink
@@ -208,37 +213,13 @@ function Game3({ onBackToLevels }) {
 
 const styles = {
   container: {
-    maxWidth: '100%',
+    maxWidth: '800px',
     margin: '0 auto',
     padding: '20px',
-    background: `linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)), url(TU_IMAGEN.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundColor: '#f0f8ff',
     borderRadius: '15px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     fontFamily: 'Arial, sans-serif',
-    overflowX: 'hidden',
-  },
-  backgroundOverlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundImage: 'url(TU_IMAGEN.jpg)', // Reemplaza con la ruta de tu imagen
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    opacity: 0.3, // Ajusta la transparencia (0 = transparente, 1 = opaco)
-    zIndex: -1, // Asegura que esté detrás del contenido
-  },
-
-  // El contenido necesita un fondo semitransparente para mejor legibilidad
-  contentWrapper: {
-    position: 'relative',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Fondo blanco semitransparente
-    padding: '20px',
-    borderRadius: '15px',
   },
   title: {
     textAlign: 'center',
@@ -280,10 +261,10 @@ const styles = {
     minHeight: '300px',
   },
   fruitBox: {
-    backgroundColor: '#F46036',
+    backgroundColor: '#ff7f50',
   },
   vegetableBox: {
-    backgroundColor: '#D7263D',
+    backgroundColor: '#32cd32',
   },
   boxTitle: {
     color: 'white',
@@ -309,7 +290,8 @@ const styles = {
     height: '100px',
     objectFit: 'cover',
     borderRadius: '8px',
-    },
+ 
+  },
   itemLabel: {
     position: 'absolute',
     top: '0',
@@ -360,4 +342,5 @@ const styles = {
   },
 };
 
-export default Game3;
+export default Game5;
+

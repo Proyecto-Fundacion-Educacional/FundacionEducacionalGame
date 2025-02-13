@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LevelSelector />} />
+        <Route path="/juego/" element={<LevelSelector />} />
         <Route path="lvl3" element={<Game3/>}/>
         <Route path='lvl2' element={<Game2/>}/>
         <Route path='lvl4' element={<Game4/>}/>

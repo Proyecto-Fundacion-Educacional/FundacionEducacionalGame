@@ -33,11 +33,11 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           # ftp server
-          server: FTP_SERVER
+          server: ${{ secrets.FTP_SERVER }}
           # ftp username
-          username: FTP_USER
+          username: ${{ secrets.FTP_USER }}
           # ftp password
-          password: FTP_PASSWORD
+          password: ${{ secrets.FTP_PASSWORD }}
           # Folder to upload from, must end with trailing slash /
           local-dir: ./dist/ # optional
           # Path to upload to on the server. Must end with trailing slash /

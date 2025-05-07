@@ -10,8 +10,8 @@ import lentejas from '../../assets/level4/lentejas.png';
 import leche from '../../assets/level5/Leche.png';
 import yogur from '../../assets/level3/yogur.png';
 import carne from '../../assets/level3/carne.png';
-import mani from '../../assets/level6/aceite.png';
-import semillasgirasol from '../../assets/Fotos nuevas juego BI/mani.png';
+import aceite from '../../assets/level6/aceite.png';
+import mani from '../../assets/Fotos nuevas juego BI/mani.png';
 import helado from '../../assets/level5/helado.png';
 import dulce from '../../assets/level5/dulcedeleche.png'
 

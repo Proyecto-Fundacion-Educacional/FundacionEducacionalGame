@@ -42,18 +42,22 @@ const styles = {
   icon: {
     width: '24px',
     height: '24px'
+  },
+  levelText: {
+    textAlign: 'center',
+    width: '100%'
   }
 };
 
 export const LevelSelector = () => {
   const levels = [
-    { id: 1, name: "Ordenar Frutas y Verduras", path: "lvl1" },
-    { id: 2, name: "Nivel 2", path: "lvl2" },
-    { id: 3, name: "Nivel 3", path: "lvl3" },
-    { id: 4, name: "Nivel 4", path: "lvl4" },
-    { id: 5, name: "Nivel 5", path: "lvl5" },
-    { id: 6, name: "Nivel 6", path: "lvl6" },
-    { id: 7, name: "Nivel 7", path: "lvl7" }
+    { id: 1, name: "Frutas y Verduras", path: "lvl1" },
+    { id: 2, name: "¿Es saludable? ", path: "lvl2" },
+    { id: 3, name: "Grasas beneficiosas o perjudiciales ", path: "lvl3" },
+    { id: 4, name: "Grupos de alimentos ", path: "lvl4" },
+    { id: 5, name: "Alimentos fuente de proteínas", path: "lvl5" },
+    { id: 6, name: "Más o menos fibra", path: "lvl6" },
+    { id: 7, name: "Agua segura ", path: "lvl7" }
     
   ];
 
@@ -63,7 +67,7 @@ export const LevelSelector = () => {
 
   return (
     <div style={styles.levelSelector}>
-      <h1 style={styles.title}>Juguemos con los alimentos! 😀 </h1>
+      <h1 style={styles.title}>El mundo de los alimentos! 😀 </h1>
       <div style={styles.levelGrid}>
         {levels.map((level) => (
           <div key={level.id} style={styles.levelItem}>
@@ -79,7 +83,7 @@ export const LevelSelector = () => {
               onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
             >
               <Star style={styles.icon} />
-              <span>{level.name}</span>
+              <span style={styles.levelText}>{level.name}</span>
             </NavLink>
           </div>
         ))}
@@ -87,4 +91,3 @@ export const LevelSelector = () => {
     </div>
   );
 };
-

@@ -9,7 +9,8 @@ import huevo from '../../assets/level6/huevofrito.png'
 import nueces from '../../assets/level6/nueces.png';
 import papas from '../../assets/level3/papasfritas.png'
 import semilas from '../../assets/level3/aceiteoliva.png';
-
+import palta from "../../assets/Fotos nuevas juego BI/Paltamitad.png";
+import nuggets from "../../assets/Fotos nuevas juego BI/cupcake.jpg"
 
 
 
@@ -26,7 +27,7 @@ const items = [
     id: 2, 
     name: 'Apple', 
     type: 'fruit', 
-    image: semilas 
+    image: palta 
   },
   { 
     id: 3, 
@@ -47,6 +48,12 @@ const items = [
     type: 'fruit', 
     image: nueces
   },
+  { 
+    id: 7, 
+    name: 'Strawberry', 
+    type: 'fruit', 
+    image: semilas
+  }
 ];
 
 function DraggableItem({ item, onDrop }) {
@@ -99,7 +106,7 @@ function DropZone({ type, items, onDrop }) {
         backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
       }}
     >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Grasas beneficiosas' : 'Grasas perjudiciales​'}</h2>
+      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Grasas beneficiosas' : 'Grasas poco beneficiosas​'}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -148,7 +155,7 @@ function Game3({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
+        <h1 style={styles.title}>Arrastrá  cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
         
         <div style={styles.introText}>
         “Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud.” 

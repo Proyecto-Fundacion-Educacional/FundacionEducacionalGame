@@ -43,6 +43,7 @@ const items = [
     type: 'fruit', 
     image: 'https://images.unsplash.com/photo-1543528176-61b239494933?auto=format&fit=crop&w=200&h=200' 
   },
+  
 ];
 
 function DraggableItem({ item, onDrop }) {
@@ -144,11 +145,10 @@ function Game1({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Ordena las frutas y verduras</h1>
+        <h1 style={styles.title}>Arrastrá cada alimento según corresponda a FRUTA o VERDURA</h1>
         
         <div style={styles.introText}>
-          ¡Bienvenido al juego de clasificación! 
-          "Comamos a diario variedad de colores de frutas y verduras. Tratemos de que la mitad de nuestro plato sea de verduras crudas o cocidas. Arrastra cada alimento a su caja correspondiente"
+        Comamos a diario variedad de colores de frutas y verduras. Tratemos de que la mitad de nuestro plato sea de verduras crudas o cocidas.
         </div>
 
         <div style={styles.scoreBoard}>
@@ -253,10 +253,10 @@ const styles = {
     minHeight: '300px',
   },
   fruitBox: {
-    backgroundColor: '#ff7f50',
+    backgroundColor: '#93E5AB',
   },
   vegetableBox: {
-    backgroundColor: '#32cd32',
+    backgroundColor: '#65B891',
   },
   boxTitle: {
     color: 'white',

@@ -12,6 +12,7 @@ import heladoImage from '../../assets/level5/helado.png';
 import mantecaImage from '../../assets/level5/manteca.png';
 import cremaImage from '../../assets/level5/dulcedeleche.png';
 
+
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const items = [
@@ -103,7 +104,7 @@ function DropZone({ type, items, onDrop }) {
         backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
       }}
     >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'LACTEOS CON MUCHO CALCIO' : 'LÁCTEOS CON POCO CALCIO Y MUCHA AZÚCAR/GRASA​'}</h2>
+      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Ricos en proteína' : 'Pobres en proteínas​'}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -152,10 +153,10 @@ function Game5({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastrá cada lácteo según su recomendación de consumo. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable.​</h1>
+        <h1 style={styles.title}>Arrastrá cada alimento según corresponda para conocer cuál nos aporta más proteínas. ​</h1>
         
         <div style={styles.introText}>
-        "Consumamos diariamente leche, yogur o queso, preferentemente descremados. Estos alimentos son las principales fuentes de calcio." ​
+        "Las proteínas completas o de buena calidad ayudan a formar, mantener y reparar los tejidos del cuerpo como músculos y piel. Comamos a lo largo del día alimentos fuente de proteína." ​
         </div>
 
         <div style={styles.scoreBoard}>
@@ -167,7 +168,6 @@ function Game5({ onBackToLevels }) {
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
             Elegí una fruta que quedaría bien para hacer un licuado con leche.  ​
-
 Buscá la información nutricional de la leche, un yogur o el queso y encontrá cuánto calcio aporta una porción.  ​
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
@@ -261,10 +261,10 @@ const styles = {
     minHeight: '300px',
   },
   fruitBox: {
-    backgroundColor: '#ff7f50',
+    backgroundColor: '#99C24D',
   },
   vegetableBox: {
-    backgroundColor: '#32cd32',
+    backgroundColor: '#F18F01',
   },
   boxTitle: {
     color: 'white',

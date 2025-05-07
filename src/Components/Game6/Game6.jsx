@@ -101,7 +101,7 @@ function DropZone({ type, items, onDrop }) {
         backgroundColor: isOver ? (canDrop ? '#90EE90' : '#FF6347') : boxStyle.backgroundColor,
       }}
     >
-      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Mayor gasto alto de energia' : 'Menor gasto de energia​'}</h2>
+      <h2 style={styles.boxTitle}>{type === 'fruit' ? 'Mayor cantidad de fibra' : 'Menor cantidad de fibra​'}</h2>
       <div style={styles.itemsGrid}>
         {items.map(item => (
           <div key={item.id} style={styles.itemContainer}>
@@ -150,10 +150,10 @@ function Game6({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra las actividades al gasto de energía correspondiente. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable.​</h1>
+        <h1 style={styles.title}>Arrastrá cada alimento para conocer cuál nos aporta mayor o menor cantidad de fibra.   ​</h1>
         
         <div style={styles.introText}>
-        “Para proteger nuestra salud es importante jugar activamente, moverse o hacer algún deporte al menos 60 minutos todos los días. Evitemos quedarnos quietos más de una hora y no pasemos más de dos horas frente a las pantallas.” 
+        La fibra alimentaria protege la salud del sistema digestivo y del corazón. Los alimentos integrales (arroz integral, pan integral, etc) aportan el doble de fibra que los blancos.
         </div>
 
         <div style={styles.scoreBoard}>
@@ -163,10 +163,7 @@ function Game6({ onBackToLevels }) {
         {gameCompleted && (
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
-            <div style={styles.congratsText}>
-            ¡Hacé una pausa activa! Trotá en el lugar contando hasta 20. Agachate y luego estírate saltando 10 veces. ​
-
-Recordá tomar agua antes, durante y después de hacer actividad física. Sumá 8 vasos al día. ​
+            <div style={styles.congratsText}>¿Sabías que la cáscara comestible de frutas como manzana, pelón, pera, etc. tienen fibra? Elegí comer esas frutas con cáscara. ¡Siempre bien lavadas!  
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink

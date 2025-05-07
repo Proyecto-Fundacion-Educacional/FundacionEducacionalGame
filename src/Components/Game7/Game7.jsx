@@ -119,7 +119,7 @@ function Game7({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastrá cada legumbre o cereal a su nombre correcto. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable</h1>
+        <h1 style={styles.title}>Arrastrá cada bebida según corresponda para conocer cuál podemos tomar todos los días y cuál dejar para de vez en cuando. </h1>
         
         <div style={styles.introText}>
         “Comamos legumbres y cereales integrales que nos dan más fibra. Podemos combinar legumbres y cereales, que nos dan proteína de alto valor biológico, como una alternativa para reemplazar la carne.” 
@@ -133,10 +133,7 @@ function Game7({ onBackToLevels }) {
         {gameCompleted && (
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
-            <div style={styles.congratsText}>
-            Buscá la receta de una preparación con legumbres como porotos, lentejas, garbanzos. ¿Te animás a prepararla? 
-Animate a probar nuevas legumbres en familia. Dejalas en remojo unas horas antes de cocinarlas.  
-
+            <div style={styles.congratsText}>“Nuestro cuerpo está formado por un 70% de agua, pero perdemos entre 2 y 3 litros diarios a través del sudor, la orina, las heces y la respiración. Necesitamos beber 8 vasos de agua por día para reponer el agua que perdemos”.   
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink

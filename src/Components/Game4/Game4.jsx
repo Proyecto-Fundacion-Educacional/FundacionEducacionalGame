@@ -5,13 +5,13 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
 import banana from '../../assets/level3/Banana.png';
 import frutilla from '../../assets/level3/Frutilla.png';
-import garbanzos from '../../assets/level4/garbanzo.png';
+import garbanzos from '../../assets/Fotos nuevas juego BI/arroz.png';
 import lentejas from '../../assets/level4/lentejas.png';
 import leche from '../../assets/level5/Leche.png';
 import yogur from '../../assets/level3/yogur.png';
 import carne from '../../assets/level3/carne.png';
 import mani from '../../assets/level6/aceite.png';
-import semillasgirasol from '../../assets/level3/aceiteoliva.png';
+import semillasgirasol from '../../assets/Fotos nuevas juego BI/mani.png';
 import helado from '../../assets/level5/helado.png';
 import dulce from '../../assets/level5/dulcedeleche.png'
 
@@ -21,18 +21,18 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 const items = [
   { id: 1, name: 'Banana', type: 'Frutas', image: banana},
   { id: 3, name: 'Carrot', type: 'Frutas', image: frutilla },
-  { id: 4, name: 'Broccoli', type: 'Lacteos', image: leche},
-  { id: 5, name: 'Olive Oil', type: 'Grasas', image: dulce },
+  { id: 4, name: 'Broccoli', type: 'Lácteos', image: leche},
+  { id: 5, name: 'Olive Oil', type: 'Opcionales', image: dulce },
   { id: 6, name: 'Avocado', type: 'Carnes', image: carne},
   { id: 7, name: 'Bread', type: 'Aceites', image: semillasgirasol },
-  { id: 8, name: 'Rice', type: 'Grasas', image: helado},
+  { id: 8, name: 'Rice', type: 'Opcionales', image: helado},
   { id: 9, name: 'Milk', type: 'Aceites', image: mani},
-  { id: 10, name: 'Cheese', type: 'Lacteos', image: yogur},
+  { id: 10, name: 'Cheese', type: 'Lácteos', image: yogur},
   { id: 11, name: 'Chicken', type: 'Cereales', image: garbanzos},
   { id: 12, name: 'Fish', type: 'Cereales', image: lentejas },
 ];
 
-const categories = ['Frutas', 'Cereales', 'Lacteos', 'Carnes', 'Aceites', 'Grasas'];
+const categories = ['Frutas', 'Cereales', 'Lácteos', 'Carnes', 'Aceites', 'Opcionales'];
 
 function DraggableItem({ item, onDrop }) {
   const [{ isDragging }, drag] = useDrag({
@@ -129,7 +129,7 @@ function Game4({ onBackToLevels }) {
   return (
     <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <div style={styles.container}>
-        <h1 style={styles.title}>Arrastra los alimentos a la categoría correspondiente.</h1>
+        <h1 style={styles.title}>Arrastrá los alimentos a la categoría correspondiente.</h1>
         
         <div style={styles.introText}>
           "Para una alimentación saludable, es importante conocer los diferentes grupos de alimentos y consumirlos de manera equilibrada."
@@ -244,12 +244,12 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   categoryColors: {
-    Frutas: '#ff7f50',
-    Aceites: '#32cd32',
-    Grasas: '#ffd700',
-    Cereales: '#deb887',
-    Lacteos: '#87cefa',
-    Carnes: '#fa8072',
+    Frutas: '#285943',
+    Aceites: '#F39237',
+    Opcionales: '#D1495B',
+    Cereales: '#FFFFC7',
+    Lácteos: '#AAFCB8',
+    Carnes: '#FFA69E  ',
   },
   boxTitle: {
     color: 'white',

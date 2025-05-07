@@ -120,10 +120,10 @@ function Game2({ onBackToLevels }) {
       minHeight: '300px',
     },
     fruitBox: {
-      backgroundColor: '#ff7f50',
+      backgroundColor: '#28965A',
     },
     vegetableBox: {
-      backgroundColor: '#32cd32',
+      backgroundColor: '#EA4B48',
     },
     boxTitle: {
       color: 'white',
@@ -214,11 +214,9 @@ function Game2({ onBackToLevels }) {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Ordena la Comida saludable y No saludable</h1>
+      <h1 style={styles.title}>Arrastrá cada comida para descubrir si es SALUDABLE o POCO SALUDABLE</h1>
       <div style={styles.introText}>
-        ¡Bienvenido al juego de clasificación! Arrastra cada alimento a su caja correspondiente 
-        Ganarás 10 puntos por cada acierto 
-        y perderás 5 puntos por cada error. ¡Demuestra tus conocimientos sobre alimentos!
+      No hay alimentos prohibidos. Hay alimentos saludables para comer todos los días y alimentos poco saludables para comer de vez en cuando.
       </div>
       <div style={styles.scoreBoard}>
         Puntuación: {score}
@@ -228,7 +226,7 @@ function Game2({ onBackToLevels }) {
         <div style={styles.congratsMessage}>
           <div style={styles.congratsTitle}>¡Felicitaciones!</div>
           <div style={styles.congratsText}>
-            A veces esta bien comer comidas no saludables, pero lo importante es priorizar comidas que nos hagan bien al cuerpo
+          Recordá comer alimentos saludables todos los días y dejar los poco saludables para comer de vez en cuando, en ocasiones especiales. 
             
           </div>
           <NavLink
@@ -271,7 +269,7 @@ function Game2({ onBackToLevels }) {
           onDragOver={handleDragOver}
           onDrop={(e) => handleDrop(e, 'vegetable')}
         >
-          <h2 style={styles.boxTitle}>No saludables </h2>
+          <h2 style={styles.boxTitle}>Poco saludables </h2>
           <div style={styles.itemsGrid}>
             {vegetables.map(item => (
               <div key={item.id} style={styles.itemContainer}>

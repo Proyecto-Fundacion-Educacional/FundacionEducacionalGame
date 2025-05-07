@@ -269,7 +269,7 @@ function Game2({ onBackToLevels }) {
           onDragOver={handleDragOver}
           onDrop={(e) => handleDrop(e, 'vegetable')}
         >
-          <h2 style={styles.boxTitle}>Poco saludables </h2>
+          <h2 style={styles.boxTitle}>Poco saludable </h2>
           <div style={styles.itemsGrid}>
             {vegetables.map(item => (
               <div key={item.id} style={styles.itemContainer}>

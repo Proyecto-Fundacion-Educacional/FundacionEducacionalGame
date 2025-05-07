@@ -11,7 +11,7 @@ import leche from '../../assets/level5/Leche.png';
 import yogur from '../../assets/level3/yogur.png';
 import carne from '../../assets/level3/carne.png';
 import aceite from '../../assets/level6/aceite.png';
-import mani from '../../assets/Fotos nuevas juego BI/mani.png';
+import pesaco from "../../assets/Fotos nuevas juego BI/filepescado.webp"
 import helado from '../../assets/level5/helado.png';
 import dulce from '../../assets/level5/dulcedeleche.png'
 
@@ -24,9 +24,9 @@ const items = [
   { id: 4, name: 'Broccoli', type: 'Lácteos', image: leche},
   { id: 5, name: 'Olive Oil', type: 'Opcionales', image: dulce },
   { id: 6, name: 'Avocado', type: 'Carnes', image: carne},
-  { id: 7, name: 'Bread', type: 'Aceites', image: semillasgirasol },
+  { id: 7, name: 'Bread', type: 'Aceites', image: helado },
   { id: 8, name: 'Rice', type: 'Opcionales', image: helado},
-  { id: 9, name: 'Milk', type: 'Aceites', image: mani},
+  { id: 9, name: 'Milk', type: 'Aceites', image: pesaco},
   { id: 10, name: 'Cheese', type: 'Lácteos', image: yogur},
   { id: 11, name: 'Chicken', type: 'Cereales', image: garbanzos},
   { id: 12, name: 'Fish', type: 'Cereales', image: lentejas },

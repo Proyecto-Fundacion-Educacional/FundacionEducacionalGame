@@ -11,6 +11,9 @@ import quesoImage from '../../assets/level5/queso.png';
 import heladoImage from '../../assets/level5/helado.png';
 import mantecaImage from '../../assets/level5/manteca.png';
 import cremaImage from '../../assets/level5/dulcedeleche.png';
+import carne from "../../assets/Fotos nuevas juego BI/steak.png"
+import huevo from "../../assets/Fotos nuevas juego BI/egg.png"
+import milkshake from "../../assets/Fotos nuevas juego BI/milkshake.png"
 
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -51,6 +54,24 @@ const items = [
     name: 'Crema', 
     type: 'vegetable', 
     image: cremaImage
+  },
+  { 
+    id: 7, 
+    name: 'Crema', 
+    type: 'fruit', 
+    image: carne
+  },
+  { 
+    id: 8, 
+    name: 'Crema', 
+    type: 'fruit', 
+    image: huevo
+  },
+  { 
+    id: 9, 
+    name: 'Crema', 
+    type: 'vegetable', 
+    image: milkshake
   },
 ];
 
@@ -167,8 +188,7 @@ function Game5({ onBackToLevels }) {
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
-            Elegí una fruta que quedaría bien para hacer un licuado con leche.  ​
-Buscá la información nutricional de la leche, un yogur o el queso y encontrá cuánto calcio aporta una porción.  ​
+           ¿Sabías que combinando legumbres con cereales, por ejemplo arroz con lentejas, obtenemos proteínas de buena calidad? Buscá distintas preparaciones que combinen legumbres con cereales.  ​
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink

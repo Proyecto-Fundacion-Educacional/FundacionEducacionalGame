@@ -67,7 +67,7 @@ export const LevelSelector = () => {
 
   return (
     <div style={styles.levelSelector}>
-      <h1 style={styles.title}>El mundo de los alimentos! 😀 </h1>
+      <h1 style={styles.title}>¡El mundo de los alimentos! 😀 </h1>
       <div style={styles.levelGrid}>
         {levels.map((level) => (
           <div key={level.id} style={styles.levelItem}>

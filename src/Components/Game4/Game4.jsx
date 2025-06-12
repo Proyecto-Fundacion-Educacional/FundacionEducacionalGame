@@ -10,10 +10,12 @@ import lentejas from '../../assets/level4/lentejas.png';
 import leche from '../../assets/level5/Leche.png';
 import yogur from '../../assets/level3/yogur.png';
 import carne from '../../assets/level3/carne.png';
-import aceite from '../../assets/level6/aceite.png';
-import pesaco from "../../assets/Fotos nuevas juego BI/filepescado.webp"
+import nuez from "../../assets/Fotos nuevas juego BI/nut.png"
+import pesaco from "../../assets/Fotos nuevas juego BI/pescao.png"
 import helado from '../../assets/level5/helado.png';
 import dulce from '../../assets/level5/dulcedeleche.png'
+import pasta from '../../assets/Fotos nuevas juego BI/pasta.png'
+import avena from "../../assets/Fotos nuevas juego BI/oat.png"
 
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -24,12 +26,13 @@ const items = [
   { id: 4, name: 'Broccoli', type: 'Lácteos', image: leche},
   { id: 5, name: 'Olive Oil', type: 'Opcionales', image: dulce },
   { id: 6, name: 'Avocado', type: 'Carnes', image: carne},
-  { id: 7, name: 'Bread', type: 'Aceites', image: helado },
+  { id: 7, name: 'Bread', type: 'Aceites', image: nuez },
   { id: 8, name: 'Rice', type: 'Opcionales', image: helado},
-  { id: 9, name: 'Milk', type: 'Aceites', image: pesaco},
+  { id: 9, name: 'Milk', type: 'Carnes', image: pesaco},
   { id: 10, name: 'Cheese', type: 'Lácteos', image: yogur},
   { id: 11, name: 'Chicken', type: 'Cereales', image: garbanzos},
-  { id: 12, name: 'Fish', type: 'Cereales', image: lentejas },
+  { id: 12, name: 'Fish', type: 'Cereales', image: avena },
+  { id: 13, name: 'Pasta', type: 'Cereales', image:pasta  },
 ];
 
 const categories = ['Frutas', 'Cereales', 'Lácteos', 'Carnes', 'Aceites', 'Opcionales'];
@@ -143,7 +146,7 @@ function Game4({ onBackToLevels }) {
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
             <div style={styles.congratsText}>
-              Has completado el juego. Recuerda que una dieta balanceada incluye alimentos de todos estos grupos.
+             Recordá incluir alimentos variados todos los días y dejar los Opcionales para comer de vez en cuando. ¿Te animás a llevar frutas y cereales para el recreo? 
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink

@@ -22,7 +22,7 @@ const items = [
   
 ];
 
-const categories = ['Lentejas', 'Arroz_Integral', 'Porotos_Mung', 'Quinoa', 'Serraceno', 'Garbanzos'];
+const categories = ['Diario', 'Ocacionalmente'];
 
 function DraggableItem({ item, onDrop }) {
   const [{ isDragging }, drag] = useDrag({
@@ -122,7 +122,7 @@ function Game7({ onBackToLevels }) {
         <h1 style={styles.title}>Arrastrá cada bebida según corresponda para conocer cuál podemos tomar todos los días y cuál dejar para de vez en cuando. </h1>
         
         <div style={styles.introText}>
-        “Comamos legumbres y cereales integrales que nos dan más fibra. Podemos combinar legumbres y cereales, que nos dan proteína de alto valor biológico, como una alternativa para reemplazar la carne.” 
+        Nuestro cuerpo está formado por un 70% de agua, pero perdemos entre 2 y 3 litros diarios a través del sudor, la orina, las heces y la respiración. Necesitamos beber 8 vasos de agua por día para reponer el agua que perdemos. 
 
         </div>
 
@@ -133,7 +133,7 @@ function Game7({ onBackToLevels }) {
         {gameCompleted && (
           <div style={styles.congratsMessage}>
             <div style={styles.congratsTitle}>¡Felicitaciones!</div>
-            <div style={styles.congratsText}>“Nuestro cuerpo está formado por un 70% de agua, pero perdemos entre 2 y 3 litros diarios a través del sudor, la orina, las heces y la respiración. Necesitamos beber 8 vasos de agua por día para reponer el agua que perdemos”.   
+            <div style={styles.congratsText}>Animate a contar cuántos vasos de agua tomaste a lo largo del día hasta llegar a los 8 vasos. No esperes a tener sed para tomar agua..   
               {score === items.length * 10 && " ¡Puntuación perfecta!"}
             </div>
             <NavLink

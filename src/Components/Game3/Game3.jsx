@@ -10,7 +10,8 @@ import nueces from '../../assets/level6/nueces.png';
 import papas from '../../assets/level3/papasfritas.png'
 import semilas from '../../assets/level3/aceiteoliva.png';
 import palta from "../../assets/Fotos nuevas juego BI/Paltamitad.png";
-import nuggets from "../../assets/Fotos nuevas juego BI/cupcake.jpg"
+import nuggets from "../../assets/Fotos nuevas juego BI/chickenNuggets.png";
+import cupcake from "../../assets/Fotos nuevas juego BI/R.png"
 
 
 
@@ -53,6 +54,18 @@ const items = [
     name: 'Strawberry', 
     type: 'fruit', 
     image: semilas
+  },
+  { 
+    id: 8, 
+    name: 'Strawberry', 
+    type: 'vegetable', 
+    image: nuggets
+  },
+  { 
+    id: 9, 
+    name: 'Strawberry', 
+    type: 'vegetable', 
+    image: cupcake
   }
 ];
 

@@ -43,7 +43,18 @@ const items = [
     type: 'fruit', 
     image: 'https://images.unsplash.com/photo-1543528176-61b239494933?auto=format&fit=crop&w=200&h=200' 
   },
-  
+  { 
+    id: 7, 
+    name: 'Orange', 
+    type: 'fruit', 
+    image: 'https://www.meme-arsenal.com/memes/2606abc7cf5edda3fe0880dbc9475bcc.jpg' 
+  },
+  { 
+    id: 8, 
+    name: 'Orange', 
+    type: 'vegetable', 
+    image: 'https://soycomocomo.es/media/2015/11/remolacha.jpg' 
+  }
 ];
 
 function DraggableItem({ item, onDrop }) {

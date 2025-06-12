@@ -3,12 +3,13 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
-import correr from '../../assets/level7/correr.png'
-import gym from '../../assets/level7/hacergimnasia.png'
-import footbal from '../../assets/level7/jugaralapelota.png'
-import leer from '../../assets/level7/leer.png'
-import tele from '../../assets/level7/mirartele.png'
-import tablet from '../../assets/level7/tabletpantallas.png'
+import manzana from "../../assets/Fotos nuevas juego BI/manzana.png"
+import arrozIntegral from "../../assets/Fotos nuevas juego BI/arrosIntegral.png"
+import panIntegral from "../../assets/Fotos nuevas juego BI/panIntegral.png"
+import acelga from "../../assets/Fotos nuevas juego BI/acelga.png"
+import caramelo from "../../assets/Fotos nuevas juego BI/caramelo.png"
+import arrozBlanco from "../../assets/Fotos nuevas juego BI/arrozBlanco.png"
+import panFrances from "../../assets/Fotos nuevas juego BI/panFrances.png"
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -17,37 +18,43 @@ const items = [
     id: 1, 
     name: 'Banana', 
     type: 'fruit', 
-    image: correr 
+    image: manzana 
   },
   { 
     id: 2, 
     name: 'Apple', 
     type: 'fruit', 
-    image: gym 
+    image: panIntegral 
   },
   { 
     id: 3, 
     name: 'Carrot', 
     type: 'vegetable', 
-    image: leer 
+    image: panFrances 
   },
   { 
     id: 4, 
     name: 'Broccoli', 
     type: 'vegetable', 
-    image: tele
+    image: arrozBlanco
   },
   { 
     id: 5, 
     name: 'Tomato', 
     type: 'vegetable', 
-    image: tablet 
+    image: caramelo 
   },
   { 
     id: 6, 
     name: 'Strawberry', 
     type: 'fruit', 
-    image: footbal
+    image: arrozIntegral
+  },
+  { 
+    id: 7, 
+    name: 'Strawberry', 
+    type: 'fruit', 
+    image: acelga
   },
 ];
 

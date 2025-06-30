@@ -3,22 +3,23 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { NavLink } from 'react-router-dom';
-import Lenteja from '../../assets/level4/lentejas.png'
-import Mung from '../../assets/level4/porotosmung.png'
-import Quinoa from '../../assets/level4/quinoa.png'
-import Garbanzo from '../../assets/level4/garbanzo.png'
-import Integral from '../../assets/level4/arrozintegral.png'
-import serraceno from '../../assets/level4/Trigosarraceno.png'
+
+import te from '../../assets/Fotos nuevas juego BI/te.png'
+import milkshake from '../../assets/Fotos nuevas juego BI/milkshake.png'
+import coca from '../../assets/Fotos nuevas juego BI/Coca.png'
+import smoothie from "../../assets/Fotos nuevas juego BI/smothie.png"
+import jugoNaranja from "../../assets/Fotos nuevas juego BI/jugoNaranja.png"
+import agua from "../../assets/Fotos nuevas juego BI/agua.png"
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const items = [
-  { id: 1, name: 'Banana', type: 'Lentejas', image: Lenteja},
-  { id: 3, name: 'Carrot', type: 'Arroz_Integral', image: Integral },
-  { id: 4, name: 'Broccoli', type: 'Quinoa', image: Quinoa},
-  { id: 5, name: 'Olive Oil', type: 'Porotos_Mung', image: Mung },
-  { id: 6, name: 'Avocado', type: 'Garbanzos', image: Garbanzo},
-  { id: 7, name: 'Bread', type: 'Serraceno', image: serraceno },
+  { id: 1, name: 'Banana', type: 'Ocacionalmente', image: coca},
+  { id: 3, name: 'Carrot', type: 'Diario', image: agua },
+  { id: 4, name: 'Broccoli', type: 'Diario', image: smoothie},
+  { id: 5, name: 'Olive Oil', type: 'Ocacionalmente', image: jugoNaranja },
+  { id: 6, name: 'Avocado', type: 'Diario', image: te},
+  { id: 7, name: 'Bread', type: 'Ocacionalmente', image: milkshake },
   
 ];
 
@@ -234,8 +235,8 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   categoryColors: {
-    Lentejas: '#ff7f50',
-    Arroz_Integral: '#32cd32',
+    Ocacionalmente: '#ff7f50',
+    Diario: '#32cd32',
     Serraceno: '#ffd700',
     Quinoa: '#deb887',
     Porotos_Mung: '#87cefa',

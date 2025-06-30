@@ -88,6 +88,39 @@ export const LevelSelector = () => {
           </div>
         ))}
       </div>
+      
+      {/* Botón de feedback */}
+      <button
+        style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          backgroundColor: '#10b981',
+          color: 'white',
+          border: 'none',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '500',
+          cursor: 'pointer',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          transition: 'all 0.3s ease',
+          zIndex: 1000
+        }}
+        onClick={() => window.open('https://www.google.com', '_blank')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#059669';
+          e.currentTarget.style.transform = 'translateY(-2px)';
+          e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#10b981';
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        }}
+      >
+        Entréganos feedback
+      </button>
     </div>
   );
 };

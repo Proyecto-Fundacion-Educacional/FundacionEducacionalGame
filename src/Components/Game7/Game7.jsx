@@ -123,7 +123,7 @@ function Game7({ onBackToLevels }) {
         <h1 style={styles.title}>Arrastrá cada bebida según corresponda para conocer cuál podemos tomar todos los días y cuál dejar para de vez en cuando. </h1>
         
         <div style={styles.introText}>
-        Nuestro cuerpo está formado por un 70% de agua, pero perdemos entre 2 y 3 litros diarios a través del sudor, la orina, las heces y la respiración. Necesitamos beber 8 vasos de agua por día para reponer el agua que perdemos. 
+        "Nuestro cuerpo está formado por un 70% de agua, pero perdemos entre 2 y 3 litros diarios a través del sudor, la orina, las heces y la respiración. Necesitamos beber 8 vasos de agua por día para reponer el agua que perdemos."
 
         </div>
 

@@ -104,10 +104,10 @@ export const LevelSelector = () => {
           fontWeight: '500',
           cursor: 'pointer',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          transition: 'all 0.3s ease',
+          transition: 'all 0.4s ease',
           zIndex: 1000
         }}
-        onClick={() => window.open('https://www.google.com', '_blank')}
+        onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfF0feRxUfvaDi8fW_HRESp6TywWqUTvyGMgCcVLk_hJWb0vQ/viewform', '_blank')}
         onMouseOver={(e) => {
           e.currentTarget.style.backgroundColor = '#059669';
           e.currentTarget.style.transform = 'translateY(-2px)';

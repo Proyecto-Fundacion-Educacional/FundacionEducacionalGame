@@ -2,8 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)), url(https://i.pinimg.com/736x/f6/c5/98/f6c598617da7d81b2afdb3379bc091b5.jpg);
+    background: linear-gradient(rgba(196, 201, 205, 0.468), rgba(240, 248, 255, 0.9)), url(./assets/fondo.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-  }
+}

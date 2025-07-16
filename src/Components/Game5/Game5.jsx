@@ -177,7 +177,7 @@ function Game5({ onBackToLevels }) {
         <h1 style={styles.title}>Arrastrá cada alimento según corresponda para conocer cuál nos aporta más proteínas. ​</h1>
         
         <div style={styles.introText}>
-        "Las proteínas completas o de buena calidad ayudan a formar, mantener y reparar los tejidos del cuerpo como músculos y piel. Comamos a lo largo del día alimentos fuente de proteína." ​
+        Las proteínas completas o de buena calidad ayudan a formar, mantener y reparar los tejidos del cuerpo como músculos y piel. Comamos a lo largo del día alimentos fuente de proteína. ​
         </div>
 
         <div style={styles.scoreBoard}>

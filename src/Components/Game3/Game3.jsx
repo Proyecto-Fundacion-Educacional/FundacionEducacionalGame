@@ -171,7 +171,7 @@ function Game3({ onBackToLevels }) {
         <h1 style={styles.title}>Arrastrá  cada tipo de grasa según corresponda. Al finalizar, descubrí el mensaje que te invita a ponerte en acción para ser más saludable​</h1>
         
         <div style={styles.introText}>
-        “Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud.” 
+        Usemos aceite crudo como condimento en las comidas y agreguemos frutas secas o semillas para el aporte de grasas beneficiosas para nuestra salud. 
         </div>
 
         <div style={styles.scoreBoard}>

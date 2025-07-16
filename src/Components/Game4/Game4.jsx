@@ -135,7 +135,7 @@ function Game4({ onBackToLevels }) {
         <h1 style={styles.title}>Arrastrá los alimentos a la categoría correspondiente.</h1>
         
         <div style={styles.introText}>
-          "Para una alimentación saludable, es importante conocer los diferentes grupos de alimentos y consumirlos de manera equilibrada."
+          Para una alimentación saludable, es importante conocer los diferentes grupos de alimentos y consumirlos de manera equilibrada.
         </div>
 
         <div style={styles.scoreBoard}>

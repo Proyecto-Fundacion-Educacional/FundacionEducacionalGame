@@ -266,7 +266,7 @@ const styles = {
     backgroundColor: '#ff7f50',
   },
   vegetableBox: {
-    backgroundColor: '#32cd32',
+    backgroundColor: '#e92d2aff',
   },
   boxTitle: {
     color: 'white',

@@ -14,16 +14,16 @@ import agua from "../../assets/Fotos nuevas juego BI/agua.png"
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const items = [
-  { id: 1, name: 'Banana', type: 'Ocacionalmente', image: coca},
+  { id: 1, name: 'Banana', type: 'Ocasionalmente', image: coca},
   { id: 3, name: 'Carrot', type: 'Diario', image: agua },
   { id: 4, name: 'Broccoli', type: 'Diario', image: smoothie},
-  { id: 5, name: 'Olive Oil', type: 'Ocacionalmente', image: jugoNaranja },
+  { id: 5, name: 'Olive Oil', type: 'Ocasionalmente', image: jugoNaranja },
   { id: 6, name: 'Avocado', type: 'Diario', image: te},
-  { id: 7, name: 'Bread', type: 'Ocacionalmente', image: milkshake },
+  { id: 7, name: 'Bread', type: 'Ocasionalmente', image: milkshake },
   
 ];
 
-const categories = ['Diario', 'Ocacionalmente'];
+const categories = ['Diario', 'Ocasionalmente'];
 
 function DraggableItem({ item, onDrop }) {
   const [{ isDragging }, drag] = useDrag({
@@ -235,7 +235,7 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   categoryColors: {
-    Ocacionalmente: '#ff7f50',
+    Ocasionalmente: '#ff7f50',
     Diario: '#32cd32',
     Serraceno: '#ffd700',
     Quinoa: '#deb887',
